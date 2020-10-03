@@ -1,0 +1,42 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+      <mat-drawer-container style="height: 1000px" class="drawrContainer">
+        <mat-drawer #dr1 class="col-6 col-sm-2 drawerSlider">
+          <div class="drawerHeader">Admin Panel</div>
+          <a routerLink="cat">Category </a>
+          <a routerLink="subcat">Sub Category </a>
+          <a routerLink="subsubcat">Subsub Category</a>
+        </mat-drawer>
+        <mat-drawer-content>
+          <mat-toolbar style="background-color: mediumblue">
+            <mat-icon
+              style="
+                margin-left: 20px;
+                background-color: white;
+                color: black;
+                padding: 3px 3px 3px 3px;
+                cursor: pointer;
+                border-radius: 3px;
+                width: 30px;
+                height: 30px;
+              "
+              (click)="dr1.toggle()"
+            >
+              horizontal_split
+            </mat-icon>
+            <div style="margin-left: 20px">
+              <button mat-raised-button style="margin: 5px">Invoice</button>
+              <button mat-raised-button style="margin: 5px">Analytice</button>
+              <button mat-raised-button style="margin: 5px">Bussiness</button>
+            </div>
+          </mat-toolbar>
+
+          <div style="margin-top: 10px">
+            <router-outlet></router-outlet>
+          </div>
+        </mat-drawer-content>
+      </mat-drawer-container>
+    </div>
+  </div>
+</div>
